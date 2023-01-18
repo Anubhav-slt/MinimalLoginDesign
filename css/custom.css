@@ -6,11 +6,15 @@ box-sizing: border-box;
 font-family: 'montserrat regular',sans-serif;
 }
 .box{
+    margin: 0px;
+    padding: 0px;
     width: auto;
     border-style: solid;
-    border-width: 15px;
+    border-width: 7px;
     border-color: skyblue;
 }
+
+
 /* === body */
 body{
 overflow-y: hidden;
@@ -47,4 +51,8 @@ color: white;
     h2{
         width: 80%;
     }
+}
+span1{
+    color:red;
+    font-size: 17px;
 }
