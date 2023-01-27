@@ -13,6 +13,7 @@
 
     <!-- Fontawesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
 </head>
 <body>
     <div class="box">
@@ -41,6 +42,8 @@
 
             <main class="flex-auto bg-white space-y-7 p-2">
                     <header class="py-5 px-5 my-4">
+                        <div align="center"><span2 id="LoginPass"></span2></div><br>
+                        <div align="center"><span3 id="LoginFail"></span3></div>
                         <nav>
                             <ul class="flex items-center justify-end space-x-4">
                                 <a href="#">
@@ -64,53 +67,35 @@
 
                     <div class="flex items-center justify-center p-5">
                         <h4 style="font-family: 'montserrat regular';" class="text-3xl font-black text-black">
-                            Sign Up
+                            Log in
                         </h4>
                     </div>
 
                <section class="flex flex-col items-center justify-center">
-                    <form class="space-y-4" class="space-y-4" action="#" autocomplete="off" onsubmit="return validation()">
-                        <div class="username">
+                    <form class="space-y-4" action="#" autocomplete="off" onsubmit="return loginValidation()" >
+                        <div class="email" >
                             <div class="relative mt-1">
-                                <input type="username" id="userInp"
-                                class="p-4 w-80 h-10 rounded pl-10 text-sm focus:outline-none border border-gray-200 focus:border-red-400 font-light" placeholder="Username">
-                                <br><span1 id="usernamee"></span1>
-                                <svg class="w-4 h-4 absolute top-0 m-3 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        </div>  
-
-                        <div class="email">
-                            <div class="relative mt-1 mb-2">
-                                <input type="email" id="emailInp"
+                                <input type="email" id="emailInp" 
                                 class="p-4 w-80 h-10 rounded pl-10 text-sm focus:outline-none border border-gray-200 focus:border-red-400 font-light" placeholder="email address">
                                 <br><span1 id="emaill"></span1>
                                 <svg class="w-4 h-4 absolute top-0 m-3 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z" clip-rule="evenodd"></path></svg>
                             </div>
                         </div>  
 
-                        <div class="dob">
-                            <div class="relative mt-1 mb-2">
-                                <input type="date" id="dobInp"
-                                class="p-4 w-80 h-10 rounded pl-10 text-sm focus:outline-none border border-gray-200 focus:border-red-400 font-light" placeholder="Date of Birth">
-                                <br><span1 id="dobb"></span1>
-                                <svg class="w-4 h-4 absolute top-0 m-3 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z" clip-rule="evenodd"></path></svg>
-                            </div>
-                        </div>  
-
                         <div class="password">
-                              <div class="relative mt-1 mb-3">
+                              <div class="relative mt-1 mb-2">
                                   <input type="password"  id="passwordInp" class="p-4 w-80 h-10 rounded pl-10 text-sm focus:outline-none border border-gray-200 focus:border-red-400 font-light" placeholder="password">
                                   <br><span1 id="passwordd"></span1>
                                   <svg class="w-4 h-4 absolute top-0 m-3 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"></path></svg>
                               </div>  
                         </div>
 
-                        <button onclick="saveData()" class="focus:outline-none bg-red-400 focus:bg-red-500 focus:ring focus:ring-red-200 w-80 h-9 text-white rounded">Sign Up</button>
+                        <button onclick="loginAuthentic()" class="focus:outline-none bg-red-400 focus:bg-red-500 focus:ring focus:ring-red-200 w-80 h-9 text-white rounded">Log in</button>
                     </form>
                </section>
 
                <section class="flex flex-col items-center justify-center space-y-4">
-                <h2 class="text-gray-400"><span> or Sign Up with</span></h2>
+                <h2 class="text-gray-400"><span> or login with</span></h2>
                     <div>
                         <ul class="flex items-center justify-around space-x-5">
                             <a href="#">
@@ -140,12 +125,12 @@
                     </div>
 
                     <div class="sign_up_link space-x-1">
-                        <span class="text-sm font-light">Already have an account?</span> <a class="text-red-500 hover:text-red-600 text-sm font-light hover:underline" href="login.html">Login</a>
+                        <span class="text-sm font-light">Don't have an account?</span> <a class="text-red-500 hover:text-red-600 text-sm font-light hover:underline" href="signup.html">Sign up</a>
                     </div>
                </section>
             </main>
     </section>
 </div>
-<script type="text/javascript" src="scripts.js"></script>
+<script type="text/javascript" src="scripts.js"> </script>
 </body>
 </html>
