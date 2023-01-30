@@ -190,7 +190,7 @@
         
         let user_records=new Array();
         user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
-        if(user_records.some((v)=>{return v.email==email && v.psw==psw}))
+        if(user_records.some((v)=>{return v.Email==email && v.Password==psw}))
         {
             document.getElementById('LoginPass').innerHTML="*Login Successful, Welcome Back!";
         }
